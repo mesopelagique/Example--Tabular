@@ -1,0 +1,3 @@
+[submodule "Resources/mobile/form/list/Tabular"]
+	path = Resources/mobile/form/list/Tabular
+	url = https://github.com/mesopelagique/form-list-Tabular.git

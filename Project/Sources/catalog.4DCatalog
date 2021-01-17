@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="Example-Tabular" uuid="CB178EB28B83475B90E75CD958AECD6E" collation_locale="en-gb">
+	<schema name="DEFAULT_SCHEMA"/>
+	<table name="Expenses" uuid="02C9E7A0C6E84FC9AEE0443406E86D79" id="1">
+		<field name="ID" uuid="E9AA77DBE94F454B9BC8FF624438E9A9" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="name" uuid="B76D688FE5E04265A869EF4599CB55B8" type="10" limiting_length="255" never_null="true" id="2"/>
+		<field name="messagesCost" uuid="E9AF31A9394B47EF8E7063A36EB62727" type="5" never_null="true" id="3"/>
+		<field name="dataCost" uuid="2A21467AED5247668C63E5271084DC24" type="5" never_null="true" id="4"/>
+		<field name="longDistanceCost" uuid="9F4B62A379854099AEE8E578BC593B4C" type="5" never_null="true" id="5"/>
+		<field name="minutesCost" uuid="924877EAAF184E6095ED1EEF3F3929C6" type="5" never_null="true" id="6"/>
+		<field name="__GlobalStamp" uuid="BCA402F3427849BDBA7E1B8C21F8FBBE" type="5" id="7"/>
+		<primary_key field_name="ID" field_uuid="E9AA77DBE94F454B9BC8FF624438E9A9"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="6">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="40" top="40" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="__DeletedRecords" uuid="0BA3909101084ABE841BFB478F3BC95D" id="2" leave_tag_on_delete="true" prevent_journaling="true">
+		<field name="ID" uuid="DD0B7281C1CA49AEB641F78DBE17ADFF" type="5" unique="true" autosequence="true" id="1"/>
+		<field name="__Stamp" uuid="EF5627142E544996B5E69B02A5A385FB" type="5" id="2"/>
+		<field name="__TableNumber" uuid="0730A9B11E2046F89ABF09FD4B505FFC" type="4" id="3"/>
+		<field name="__TableName" uuid="E5800C4A396149209C8BCA6C50DDBB73" type="10" limiting_length="255" id="4"/>
+		<field name="__PrimaryKey" uuid="D2418A2341EC44608E822932F11F0C3F" type="10" limiting_length="255" id="5"/>
+		<primary_key field_name="ID" field_uuid="DD0B7281C1CA49AEB641F78DBE17ADFF"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="240" top="40" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<index kind="regular" name="__GlobalStamp_expenses" uuid="485C63F4D0114D76A1779EB141AD9D5A" type="7">
+		<field_ref uuid="BCA402F3427849BDBA7E1B8C21F8FBBE" name="__GlobalStamp">
+			<table_ref uuid="02C9E7A0C6E84FC9AEE0443406E86D79" name="Expenses"/>
+		</field_ref>
+	</index>
+	<index kind="regular" name="__DeletedRecords__Stamp" uuid="613A82EB1D154B099B01248B33FE41E5" type="7">
+		<field_ref uuid="EF5627142E544996B5E69B02A5A385FB" name="__Stamp">
+			<table_ref uuid="0BA3909101084ABE841BFB478F3BC95D" name="__DeletedRecords"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" name="__DeletedRecordsID" uuid="884F2B46A0974A73BB09A504ED6DFA34" type="7">
+		<field_ref uuid="DD0B7281C1CA49AEB641F78DBE17ADFF" name="ID">
+			<table_ref uuid="0BA3909101084ABE841BFB478F3BC95D" name="__DeletedRecords"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="D6ED239FA86841C3848A6221E858EBFB" type="7">
+		<field_ref uuid="E9AA77DBE94F454B9BC8FF624438E9A9" name="ID">
+			<table_ref uuid="02C9E7A0C6E84FC9AEE0443406E86D79" name="Expenses"/>
+		</field_ref>
+	</index>
+	<base_extra __stringCompHash="icu:68.1.0" __keywordBuildingHash="icu:68.1.0">
+		<journal_file journal_file_enabled="true"/>
+	</base_extra>
+</base>
